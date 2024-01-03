@@ -13,7 +13,7 @@ pipeline {
         // This can be http or https
         NEXUS_PROTOCOL = "http"
         // Where your Nexus is running
-        NEXUS_URL = "100.25.2.101:8081/"
+        NEXUS_URL = "100.25.2.101:8081"
         // Repository where we will upload the artifact
         NEXUS_REPOSITORY = "simplejob"
         // Jenkins credential id to authenticate to Nexus OSS
@@ -33,7 +33,7 @@ pipeline {
                 script {
                     // If you are using Windows then you should use "bat" step
                     // Since unit testing is out of the scope we skip them
-                    sh '/opt/maven/bin/mvn -Dmaven.test.failure.ignore clean package'
+                    sh 'mvn -Dmaven.test.failure.ignore clean package'
                 }
             }
         }
